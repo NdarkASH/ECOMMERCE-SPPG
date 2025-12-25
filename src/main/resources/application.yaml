@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: ecommerce
+  profiles:
+    active: test
+
+
+jwt:
+  secret: NashiSuperSecretKeyForJWT1234567890!NashiSuperSecretKeyForJWT12345678906
+  expiration: 36000000

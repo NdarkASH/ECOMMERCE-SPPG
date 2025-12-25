@@ -1,0 +1,820 @@
+2025-12-24 11:14:39.789064+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:14:39.804023+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:14:39.804023+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:14:39.804023+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:14:39.804023+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:14:39.805020+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 04:15:35.013598Z database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.intellij.database.remote.jdbc.helpers.JdbcHelperImpl.connect(JdbcHelperImpl.java:786)
+	at com.intellij.database.remote.jdbc.impl.RemoteDriverImpl.connect(RemoteDriverImpl.java:47)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 32 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 26 more
+2025-12-24 04:15:35.039529Z database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.intellij.database.remote.jdbc.helpers.JdbcHelperImpl.connect(JdbcHelperImpl.java:786)
+	at com.intellij.database.remote.jdbc.impl.RemoteDriverImpl.connect(RemoteDriverImpl.java:47)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 32 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 26 more
+2025-12-24 04:15:47.863253Z database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.intellij.database.remote.jdbc.helpers.JdbcHelperImpl.connect(JdbcHelperImpl.java:786)
+	at com.intellij.database.remote.jdbc.impl.RemoteDriverImpl.connect(RemoteDriverImpl.java:47)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 32 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 26 more
+2025-12-24 04:15:47.884197Z database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.intellij.database.remote.jdbc.helpers.JdbcHelperImpl.connect(JdbcHelperImpl.java:786)
+	at com.intellij.database.remote.jdbc.impl.RemoteDriverImpl.connect(RemoteDriverImpl.java:47)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 32 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: E:/spring/ecommerce/ecommerce/data/ecommerce-db.mv.db [2.3.232/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 26 more
+2025-12-24 11:15:56.111036+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:15:56.117019+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:15:56.117019+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:15:56.117019+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:15:56.118016+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:15:56.120011+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:20:44.905488+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:20:44.909467+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:20:44.909467+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:20:44.909467+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:20:44.910465+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:20:44.910465+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:22:00.689703+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:22:00.693693+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:22:00.693693+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:22:00.693693+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:22:00.694690+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:22:00.694690+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:22:03.051434+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:22:03.055423+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:22:03.055423+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:22:03.055423+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:22:03.055423+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:22:03.056421+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:23:11.619312+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:23:11.622304+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:23:11.623302+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:23:11.623302+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:23:11.623302+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:23:11.623302+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:24:36.846867+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:24:36.850856+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:24:36.850856+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:24:36.850856+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:24:36.850856+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:24:36.851854+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:25:12.987717+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:25:12.992703+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:25:12.993700+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:25:12.993700+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:25:12.994698+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:25:12.994698+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:26:52.959386+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:26:52.963375+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:26:52.964372+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:26:52.964372+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:26:52.964372+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:26:52.965369+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:27:48.231679+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:27:48.235668+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:27:48.235668+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:27:48.236665+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:27:48.236665+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:27:48.237663+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:28:40.621156+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:28:40.629134+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:28:40.629134+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:28:40.630132+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:28:40.630132+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:28:40.630132+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:28:42.623219+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:28:42.626211+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:28:42.626211+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:28:42.626211+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:28:42.627209+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:28:42.627209+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:29:47.418340+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:29:47.422330+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:29:47.425321+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:29:47.426319+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:29:47.426319+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:29:47.426319+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:33:26.829959+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:33:26.832950+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:33:26.833948+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:33:26.833948+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:33:26.833948+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:33:26.834946+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:33:33.876068+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:33:33.885044+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:33:33.885044+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:33:33.886043+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:33:33.886043+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:33:33.887039+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-24 11:34:31.796057+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        username varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-24 11:34:31.800046+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-24 11:34:31.801043+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-24 11:34:31.801043+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKsb8bbouer5wak8vyiiy4pf2bx [42001-240]
+2025-12-24 11:34:31.801043+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKsb8bbouer5wak8vyiiy4pf2bx unique (username) [42001-240]
+2025-12-24 11:34:31.802040+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
