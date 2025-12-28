@@ -1138,3 +1138,59 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\00
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
 
     drop table if exists user cascade  [42001-240]
+2025-12-28 19:48:27.050408+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 19:48:27.090301+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-28 19:48:27.093293+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-28 19:49:54.792007+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 19:49:55.486148+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 19:49:55.497118+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-28 19:49:55.499113+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-28 19:51:30.731586+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]

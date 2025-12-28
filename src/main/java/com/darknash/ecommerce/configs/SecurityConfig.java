@@ -2,7 +2,6 @@ package com.darknash.ecommerce.configs;
 
 import com.darknash.ecommerce.securities.JwtFilter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -39,12 +38,15 @@ public class SecurityConfig {
 
         httpSecurity.authorizeHttpRequests(
                         authorizeRequests -> authorizeRequests
-                                .requestMatchers(HttpMethod.POST, "/api/v1/login").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/api/v1/register").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/api/v1/posts/drafts").authenticated()
-                                .requestMatchers(HttpMethod.GET, "/api/v1/posts/**").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/api/v1/categories/**").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/api/v1/tags/**").authenticated().anyRequest().authenticated()
+                                .requestMatchers(
+                                        "/v3/api-docs/**",
+                                        "/swagger-ui/**",
+                                        "/swagger-ui.html"
+                                ).permitAll()
+                                .requestMatchers(HttpMethod.POST, "/login").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/cart/**").authenticated()
+                                .requestMatchers(HttpMethod.GET, "/product/**").authenticated()
+                                .requestMatchers(HttpMethod.GET, "/category/**").authenticated()
                 ).csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
