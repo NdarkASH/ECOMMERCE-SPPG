@@ -19,6 +19,5 @@ public class ProductRequest {
 
     private BigDecimal price;
 
-    private List<UUID> stockLogIds;
-
+    private UUID categoryId;
 }

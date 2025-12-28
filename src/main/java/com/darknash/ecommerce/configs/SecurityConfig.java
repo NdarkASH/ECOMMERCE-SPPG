@@ -1,8 +1,8 @@
 package com.darknash.ecommerce.configs;
 
 import com.darknash.ecommerce.securities.JwtFilter;
-import com.darknash.ecommerce.service.JwtService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -14,7 +14,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import tools.jackson.databind.ObjectMapper;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
 @Configuration
@@ -35,8 +35,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(
             HttpSecurity httpSecurity,
             JwtFilter jwtFilter
-    )throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
+    ) {
 
         httpSecurity.authorizeHttpRequests(
                         authorizeRequests -> authorizeRequests
@@ -52,5 +51,6 @@ public class SecurityConfig {
 
         return httpSecurity.build();
     }
+
 }
 

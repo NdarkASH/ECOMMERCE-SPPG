@@ -30,8 +30,8 @@ public class Product extends BaseEntity {
     private BigDecimal price;
 
     @ManyToOne
-    @JoinColumn(name = "categori_id", nullable = false)
-    private Category categories;
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @OneToMany(mappedBy = "product")
     private List<StockLog> stockLogList;

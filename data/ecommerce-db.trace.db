@@ -818,3 +818,323 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\00
        add constraint FKl70asp4l4w0jmbm1tqyofho4o 
        foreign key (user_id) 
        references user [42001-240]
+2025-12-27 00:17:19.454126+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        id uuid not null,\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        email varchar(255) not null,\000d\000a        password varchar(255) not null,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        user_name varchar(255) not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        id uuid not null,
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        role enum ('ADMIN','USER') not null,
+        user_name varchar(255) not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-27 00:17:19.473077+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKob8kqyqqgmefl0aco34akdtpe [42001-240]
+2025-12-27 00:17:19.473077+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKob8kqyqqgmefl0aco34akdtpe unique (email) [42001-240]
+2025-12-27 00:17:19.474074+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       drop constraint if exists UKlqjrcobrh9jc8wpcar64q1bfh"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       drop constraint if exists UKlqjrcobrh9jc8wpcar64q1bfh [42001-240]
+2025-12-27 00:17:19.474074+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists [*]user \000d\000a       add constraint UKlqjrcobrh9jc8wpcar64q1bfh unique (user_name)"; expected "identifier"; SQL statement:
+
+    alter table if exists user 
+       add constraint UKlqjrcobrh9jc8wpcar64q1bfh unique (user_name) [42001-240]
+2025-12-27 00:17:19.475071+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-27 00:18:12.996241+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 00:18:13.017186+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-27 00:18:13.020177+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-27 00:19:35.097931+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 00:19:35.863540+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 00:19:35.874510+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-27 00:19:35.876505+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-27 00:19:35.947827+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 00:19:38.127917+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 00:19:38.137890+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-27 00:19:38.139886+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-27 00:54:37.903702+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 18:59:44.354498+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 18:59:44.385415+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-27 18:59:44.391400+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-27 18:59:45.631298+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 19:01:08.669430+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 19:01:08.695361+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-27 19:01:08.700348+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-27 19:01:09.692711+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 19:01:22.640603+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 19:01:22.665537+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-27 19:01:22.669526+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-27 19:01:23.714358+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 20:55:10.071936+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-27 20:55:10.107840+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-27 20:55:10.110833+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-27 20:55:17.976697+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 17:15:13.347944+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 17:15:13.380856+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-28 17:15:13.384846+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-28 17:51:05.511822+07:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 17:51:06.182027+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 17:51:06.193995+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-28 17:51:06.196988+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-28 17:51:08.069558+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 17:51:08.966838+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]
+2025-12-28 17:51:08.976813+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a        created_at timestamp(6) with time zone,\000d\000a        updated_at timestamp(6) with time zone,\000d\000a        id uuid not null,\000d\000a        email varchar(255) not null unique,\000d\000a        password varchar(255) not null,\000d\000a        user_name varchar(255) not null unique,\000d\000a        role enum ('ADMIN','USER') not null,\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        created_at timestamp(6) with time zone,
+        updated_at timestamp(6) with time zone,
+        id uuid not null,
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        user_name varchar(255) not null unique,
+        role enum ('ADMIN','USER') not null,
+        primary key (id)
+    ) [42001-240]
+2025-12-28 17:51:08.978807+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    alter table if exists cart \000d\000a       add constraint FKl70asp4l4w0jmbm1tqyofho4o \000d\000a       foreign key (user_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists cart 
+       add constraint FKl70asp4l4w0jmbm1tqyofho4o 
+       foreign key (user_id) 
+       references user [42001-240]
+2025-12-28 17:51:23.843005+07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-240]

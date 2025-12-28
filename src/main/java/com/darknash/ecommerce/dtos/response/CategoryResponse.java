@@ -25,5 +25,4 @@ public class CategoryResponse {
 
     private String slug;
 
-    private List<ProductResponse> products;
 }

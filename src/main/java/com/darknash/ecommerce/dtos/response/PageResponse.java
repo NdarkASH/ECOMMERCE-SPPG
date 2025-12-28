@@ -1,23 +1,22 @@
 package com.darknash.ecommerce.dtos.response;
 
-import com.darknash.ecommerce.entities.CartItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CartResponse {
+public class PageResponse <T> {
 
-    private UUID id;
-
-    private UserResponse  user;
-
-    private List<CartItem> cartItemIds;
+    private List<T> content;
+    private int number;
+    private int size;
+    private int totalPages;
+    private long totalOfElements;
+    private int numberOfElements;
 }
